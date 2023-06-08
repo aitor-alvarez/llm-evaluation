@@ -1,4 +1,7 @@
-#From https://huggingface.co/datasets/Muennighoff/natural-instructions/blob/main/get_ni.py
+#Based on https://huggingface.co/datasets/Muennighoff/natural-instructions/blob/main/get_ni.py
+'''
+The following code downloads Natural Instructions data into a folder divided in train/test
+'''
 import json
 import logging
 
