@@ -39,10 +39,11 @@ def get_all_prompted_examples_ni(task, task_name):
 
 def get_tasky_examples_ni(split):
     task_list = split_to_task_list[split]
-    if os.path.isdir(base_dir+'/'+split) == False:
-        os.mkdir(base_dir+'/'+split)
+    split_dir = base_dir+'/'+split+'/'
+    if os.path.isdir(split_dir) == False:
+        os.mkdir(split_dir)
     for task_name in task_list:
-        with open(f"{task_name}_{split}.jsonl", "w") as f:
+        with open(split_dir+f"{task_name}_{split}.jsonl", "w") as f:
             try:
                 task_url = TASK_URL_NI + task_name + ".json"
                 task_data = json.loads(requests.get(task_url).text)
